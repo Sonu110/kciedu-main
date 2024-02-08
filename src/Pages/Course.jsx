@@ -12,7 +12,7 @@ function Course() {
   const [listdata , setlistdata]= useState('')
   const {coursedata} = useContext(userconetxt)
   const data = course.concat(coursedata)
-  
+  console.log("dtasdas", data);
   const navbarlistdata = data.filter((i) => i.name?.toLowerCase().startsWith(listdata.toLowerCase()) || i.Name?.toLowerCase().startsWith(listdata.toLowerCase()) );
 
 
@@ -111,7 +111,7 @@ function Course() {
 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
 {
 data.map((i) => (
-  <Cards key={i?.id || i?._id} name={i?.name || i?.Name} des={i?.des || i?.Fees} src={i?.src || i?.Image} flag={true}></Cards>
+  <Cards key={i?.id || i?._id} name={i?.name || i?.Name} des={i?.des || i?.Descriptions} src={i?.src || i?.Image} flag={true}></Cards>
 ))
 
 

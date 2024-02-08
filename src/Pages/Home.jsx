@@ -138,7 +138,7 @@ function Home() {
           >
             {data.map((i) =>
               <SwiperSlide>
-                <Cards key={i?.id || i?._id} name={i?.name || i?.Name} des={i?.des || i?.Fees} src={i?.src || i?.Image} flag={true}></Cards>
+                <Cards key={i?.id || i?._id} name={i?.name || i?.Name} des={i?.des || i?.Descriptions} src={i?.src || i?.Image} flag={true}></Cards>
               </SwiperSlide>
             )}
           </Swiper>
@@ -233,7 +233,7 @@ function Home() {
           >
             {data.map((i) =>
               <SwiperSlide>
-               <Cards key={i?.id || i?._id} name={i?.name || i?.Name} des={i?.des || i?.Fees} src={i?.src || i?.Image} flag={false} pdf={i?.data || i?.PDF}></Cards>
+               <Cards key={i?.id || i?._id} name={i?.name || i?.Name} des={i?.des || i?.Descriptions} src={i?.src || i?.Image} flag={false} pdf={i?.data || i?.PDF}></Cards>
               </SwiperSlide>
             )}
           </Swiper>

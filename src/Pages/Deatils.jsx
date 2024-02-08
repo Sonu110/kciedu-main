@@ -55,7 +55,7 @@ const data = info.find((item) => item?.Name === name || item?.name === name);
 
 
 <p>
-  {data?.des}
+  {data?.des || data?.Descriptions}
 </p>
 
 
