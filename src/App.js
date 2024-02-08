@@ -33,6 +33,7 @@ import Paymentlist from './Dashbord/Pages/Paymentdatas/Paymentlist';
 import Paymentupdatefrom from './Dashbord/Pages/Paymentdatas/Paymentupdatefrom';
 import Placement from './Dashbord/Pages/Placemant/Placement';
 import Career from './Pages/Career';
+import Placementlist from './Dashbord/Pages/Placemant/Placementlist';
 
 function App() {
 
@@ -87,6 +88,8 @@ function App() {
     <Route path='course' element={<Courselist />} />
     <Route path='newcourse' element={<Addcourse />} />
     <Route path='placement' element={<Placement />} />
+    <Route path='career' element={<Placementlist />} />
+    
 
 
     <Route path='logout' element={<Massage />} />

@@ -38,7 +38,7 @@ function Conatctmenu() {
     
 
     >
-    <div class="relative p-4 w-full max-h-[500px] md:max-w-[80%]  sm:max-w-[90%] h-full md:h-auto  grid grid-cols-2  bg-gray-50 rounded-lg shadow-inner">
+    <div class="relative p-4 w-full max-h-[500px]  md:max-w-[80%]  sm:max-w-[90%] h-full md:h-auto  grid grid-cols-1 lg:grid-cols-2  bg-gray-50 rounded-lg shadow-inner">
             <button type="button"
         onClick={()=> setnav(true)}  
               class="absolute z-50 top-3 right-4 bg-red-600  text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center popup-close"><svg
@@ -50,10 +50,12 @@ function Conatctmenu() {
                 </svg>
                 <span class="sr-only">Close popup</span>
             </button>
-        <div className=' bg-red-300 w-full  object-cover'>
+        <div className=' bg-red-300 w-full  object-cover  hidden
+             lg:block'>
             <img src="https://www.cssscript.com/wp-content/uploads/2023/08/Build-Beautiful-AI-Apps-With-the-LangUI-Tailwind-Library.webp" alt="" className=' w-full 
             h-[450px]
              object-cover
+            
             ' />            
         </div>
 

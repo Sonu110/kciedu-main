@@ -14,8 +14,10 @@ const Signup = () => {
   const [show ,setShow] =useState(false)
   const [massage , setmassage]=useState('')
 
+  const [isLoading, setIsLoading] = useState(false);
 const handleRegister = async (event) => {
   event.preventDefault()
+  setIsLoading(true);
   try {
     const data = new URLSearchParams({
       name,
@@ -41,6 +43,9 @@ const handleRegister = async (event) => {
     }
   } catch (error) {
     console.error("Error during registration:", error);
+  }
+  finally {
+    setIsLoading(false);
   }
 };
 
@@ -125,7 +130,7 @@ const handleRegister = async (event) => {
             className="mt-4 bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white uppercase rounded text-xs tracking-wider"
             type="submit"
           >
-            Register
+            {isLoading ? 'REGISTER...' : 'REGISTER'}
           </button>
         </div>
         <div className="mt-4 font-semibold text-sm text-slate-500 text-center md:text-left">

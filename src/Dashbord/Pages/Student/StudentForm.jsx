@@ -8,7 +8,7 @@ const StudentForm = () => {
 
   const {coursedata}= useContext(userconetxt)
   const data = course.concat(coursedata)
-
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -37,6 +37,7 @@ const StudentForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true)
   
     try {
       const formDataObj = new FormData();
@@ -75,6 +76,10 @@ const StudentForm = () => {
       }
     } catch (error) {
       console.error('Error:', error);
+    }
+    finally
+    {
+      setIsLoading(false)
     }
   };
   
@@ -337,7 +342,8 @@ const StudentForm = () => {
               type="submit"
               className="rounded-3xl bg-black px-6 py-2 text-xl font-medium uppercase text-white"
             >
-              Submit
+            {isLoading ? 'Submiting...' : 'Submit'}
+         
             </button>
             <button
               type="button"

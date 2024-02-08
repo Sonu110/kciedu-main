@@ -27,8 +27,8 @@ function Deatilsheader() {
   
   ].map((i) => (
       <div className="infobox max-w-[300px] flex items-center gap-2 ml-2 justify-center mt-2 px-5">
-        <div className="icon text-white text-lg  text-[0.8rem] md:text-xl">{i.icons}</div>
-        <div className="text text-white text-lg text-[0.7rem] md:text-[1rem]">{i.name}</div>
+        <div className="icon text-white   text-[0.8rem] md:text-xl">{i.icons}</div>
+        <div className="text text-white  text-[0.7rem] md:text-[1rem]">{i.name}</div>
       </div>
     ))}
   </div>

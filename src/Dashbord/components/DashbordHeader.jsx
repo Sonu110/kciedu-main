@@ -247,13 +247,14 @@ function DashbordHeader() {
 
                            <li>
 
-                              <Link to={"placement"} class="text-base text-gray-900 font-semibold cursor-pointer  rounded-lg flex items-center p-2 hover:bg-gray-100 group">
+                              <Link to={"career"} class="text-base text-gray-900 font-semibold cursor-pointer  rounded-lg flex items-center p-2 hover:bg-gray-100 group">
 
-                                 <span class="ml-3">{'Placement '}</span>
+                                 <span class="ml-3">{'Career '}</span>
                               </Link>
 
                            </li>
                            <li>
+                         
 
                               <Link to={"certificates"} class="text-base text-gray-900 font-semibold cursor-pointer  rounded-lg flex items-center p-2 hover:bg-gray-100 group">
 

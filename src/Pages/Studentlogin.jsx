@@ -8,11 +8,12 @@ const Studentlogin = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
   const {setlogin , setiskcistuentdata} = useContext(userconetxt)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setIsLoading(true);
     const data = {
       studentId,
       username,
@@ -44,6 +45,9 @@ const Studentlogin = () => {
       }
     } catch (error) {
       console.error('Error:', error);
+    }
+    finally {
+      setIsLoading(false);
     }
   };
 
@@ -100,7 +104,7 @@ const Studentlogin = () => {
               type="submit"
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             >
-              Login
+              {isLoading ? 'Loading...' : 'Login'}
             </button>
           </div>
         </form>

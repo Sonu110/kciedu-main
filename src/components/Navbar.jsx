@@ -11,6 +11,7 @@ function Navbars() {
     const [submenu , setsubmenu] = useState(false)
     const [listdata , setlistdata]= useState('')
   const {userdata ,coursedata , setuser} = useContext(userconetxt)
+  console.log("the value so", userdata);
   const data = course.concat(coursedata)
   const navbarlistdata = data.filter((i) => i.name?.toLowerCase().startsWith(listdata.toLowerCase()) || i.Name?.toLowerCase().startsWith(listdata.toLowerCase()) );
   const logoutuser = async () => {
@@ -100,7 +101,7 @@ function Navbars() {
 
      {userdata && userdata.data?.Name ? (
         <span className={`font-medium text-white flex justify-start    items-center bg-blue-400    min-w-20 h-9 rounded-lg cursor-pointer `}>
-          {userdata.data.Name === "Admin" ? (
+          {userdata.data?.isAdmin ? (
             <Link to={'/dashbord'} className=' px-3'>Admin</Link>
           ) : (
             <span className=' relative'onClick={()=> setsubmenu((prev)=>!prev)}>
@@ -116,6 +117,7 @@ function Navbars() {
                 <Link to={'/stuentlogin'} className="text-blue-500 hover:text-blue-700  ">
                   Student
                 </Link>
+              
                 <span onClick={logoutuser} className="text-blue-500 hover:text-blue-700">
                   Logout
                 </span>

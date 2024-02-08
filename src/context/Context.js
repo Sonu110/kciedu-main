@@ -47,7 +47,7 @@ function Providerfunction({ children }) {
             headers: {
               Authorization: `Bearer ${storedToken}`,
             },
-          });
+          }); 
 
           if (response.ok) {
             const data = await response.json();
