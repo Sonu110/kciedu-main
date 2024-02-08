@@ -15,7 +15,7 @@ Skill India offers courses across 40 sectors in the country which are aligned to
 
     <h2 className=' text-xl sm:text-2xl font-bold mb-5 mt-4'>Welcome to Institute Gellary</h2>
    
-    <div className="flex items-start justify-center h-screen mt-10">
+    <div className="flex items-start justify-center min-h-screen mt-10">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <img src="https://source.unsplash.com/random" alt="Image 1" className="rounded-lg w-full object-cover" />
         <img src="https://source.unsplash.com/random" alt="Image 2" className="rounded-lg w-full object-cover" />
