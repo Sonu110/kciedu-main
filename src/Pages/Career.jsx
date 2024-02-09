@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import API_ENDPOINT from "../config"
+import Tableloading from '../Loader/Tableloading';
 
 function Career() {
 
   const [data, setdata] = useState([])
-
+  const [loading, setLoading] = useState(true);
 
 
   useEffect(() => {
@@ -37,12 +38,21 @@ function Career() {
       } catch (error) {
         console.error('Error:', error);
       }
+      finally {
+        setLoading(false); // Set loading to false regardless of success or failure
+      }
     };
     
 
     fetchStudentData();
   }, []);
 
+  
+
+  if(loading)
+  {
+    return <Tableloading></Tableloading>
+  }
 
 
 
