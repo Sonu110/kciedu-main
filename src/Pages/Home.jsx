@@ -113,7 +113,7 @@ function Home() {
         </div>
       </section>
       <section className='upcoming Batches p-10'>
-        <h2 className="text-4xl font-bold">Upcoming Batches : <span className=' text-red-500'>{`${countdown.hours}h ${countdown.minutes}m ${countdown.seconds}s`}</span></h2>
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">Upcoming Batches : <span className=' text-red-500'>{`${countdown.hours}h ${countdown.minutes}m ${countdown.seconds}s`}</span></h2>
         <div className="branch flex items-center gap-3 flex-wrap mt-5" id='flexcols'>
           <span>Choose your Location:</span>
           <div className='w-12'>

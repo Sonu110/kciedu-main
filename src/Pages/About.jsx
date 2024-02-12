@@ -70,20 +70,27 @@ function About() {
 
 </div>
 
-<div className=' mt-10'>
+<div className=' mt-10 '>
 <h1 className=' text-xl  font-semibold'>Directors Message<div className=' w-10 h-1 bg-red-200'></div></h1>
 <h2 className=' text-4xl mt-10 mb-5'>Meet Our Founder</h2>
 
 <div className=' grid grid-cols-1 sm:grid-cols-2 gap-6'>
 
-<div className="text text-justify flex  gap-0 flex-col text-sm lg:text-[1rem]  ">
+<div className="text text-justify flex  gap-0 flex-col text-sm lg:text-[1rem] order-2  sm:order-1  " >
 Skilling India and Making India is the current and most vibrant slogan of our nation where the center Government and State Government work on this slogan and we are support to these slogan We at IIT Computer Institute, we are committed to this national building and rising India movement through skilling India with our slogan "Quality Education in Affordable Fee" One of our major focus area is Employment related Vocational Education through Industry,Institute, Hospital, etc. partnership to conquer employability problem of the nation. Employability through vocational training is promoted amongst the youth the programme sake to in enhance Employment opportunities by providing vocational Skill Training to school dropouts, unemployed youth, Tribal Communities and women with an Opportunity to led self — sustained and economically independent lives with the help of knowledge — based tie — ups with our Organization and our Training partners to provide training on varied subject, such as various employment vocational skill training various field. IIT Computer Institute aim is to think study and think social work with high flexibility and quick response value innovation connect growth and future to elevate us from mediocrity to sustained excellence. So join with us our mission.
 <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Contact with us</button>
 
 </div>
 
-<div className="img">
-  <img src="https://www.iitcomputer.com/images/teachers/t-1.jpg" alt="" />
+
+<div className=' flex flex-col justify-center items-center gap-3 order-1 sm:order-2 '>
+
+  <img src="https://www.iitcomputer.com/images/teachers/t-1.jpg" alt=""  className='  w-[200px] max-h-[200px]' />
+<div className="img grid grid-cols-2 gap-3">
+   
+  <img src="https://www.iitcomputer.com/images/teachers/t-1.jpg" alt="" className='  w-[200px] max-h-[200px]'  />
+  <img src="https://www.iitcomputer.com/images/teachers/t-1.jpg" alt="" className='  w-[200px] max-h-[200px]' />
+</div>
 </div>
 
 </div>

@@ -6,11 +6,11 @@ function Roadmap() {
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="text-center">
             <p class="text-sm font-bold uppercase tracking-widest text-gray-700">How To join</p>
-            <h2 class="mt-6 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+            <h2 class="mt-6 text-xl font-bold tracking-tight text-gray-900 sm:text-3xl lg:text-4xl">
                 in
                 4 easy steps
             </h2>
-            <p class="mx-auto mt-4 max-w-2xl text-lg font-normal text-gray-700 lg:text-xl lg:leading-8">
+            <p class="mx-auto mt-4 max-w-2xl text-sm font-normal text-gray-700 sm:text-md lg:text-lg lg:leading-8">
                 Create your own Account with us  just 4 easy steps
             </p>
         </div>
@@ -33,7 +33,7 @@ function Roadmap() {
                         class="text-xl font-bold text-gray-900 before:mb-2 before:block before:font-mono before:text-sm before:text-gray-500">
                         Add your Account
                     </h3>
-                    <h4 class="mt-2 text-base text-gray-700"> Store databases or duplicate ours.</h4>
+                    <h4 class="mt-2  text-gray-700 text-sm sm:text-[1rem]"> Store databases or duplicate ours.</h4>
                 </div>
             </li>
             <li class="flex-start group relative flex lg:flex-col">

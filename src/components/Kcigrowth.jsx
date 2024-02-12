@@ -7,6 +7,9 @@ const Kcigrowth = () => {
  
     useEffect(() => {
         const intervalId = setInterval(() => {
+
+          
+
           if (Students < 1000 )
           {
             setStudents((prevStudents) => prevStudents + 1);

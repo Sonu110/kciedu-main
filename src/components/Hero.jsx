@@ -22,7 +22,7 @@ export default function Hero() {
             other: "insitudets",
             num2: 4,
             other2: "insitudets",
-            src: "https://admin.ducatindia.com/uploads/default/file_1704950684792.webp"
+            src: "https://www.ducatindia.com/static/banner/pic4.png"
 
         },
 
@@ -34,7 +34,7 @@ export default function Hero() {
             other: "insitudets",
             num2: 4,
             other2: "insitudets",
-            src: "https://admin.ducatindia.com/uploads/default/file_1704960045639.webp"
+            src: "https://www.ducatindia.com/static/banner/pic1.png"
 
         },
 

@@ -35,7 +35,7 @@ function Heroslider({name,describe,src,num1,num2,other,other2}) {
                     </div>
                 </div>
 
-                <div className='  bg-red-500'>
+                <div className=''>
                    <img src={src} alt="" srcset="" className=' w-full object-cover'   />
                 </div>
             </div>
