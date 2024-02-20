@@ -11,7 +11,7 @@ import API_ENDPOINT from "../config"
 
 const Login = () => {
 
- const{setuser ,setlogin}= useContext(userconetxt)
+ const{setuser ,setlogin , islogin}= useContext(userconetxt)
  const [show ,setShow] =useState(false)
  const [error, setError] = useState('');
  const [isLoading, setIsLoading] = useState(false);
@@ -52,8 +52,8 @@ const Logindata = async (event) => {
       localStorage.setItem('token', responseData.token);
 
       if (responseData.isAdmin) {
-        alert('Welcome admin');
-       
+     
+     
         navigate('/dashbord');
         setlogin(true)
       } else {

@@ -2,20 +2,20 @@ import React from 'react'
 
 function Roadmap() {
   return (
-    <section class="bg-gray-50 py-12 sm:py-16 lg:py-20 xl:py-24">
+    <section class=" py-12 sm:py-16 lg:py-20 xl:py-24" >
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="text-center">
-            <p class="text-sm font-bold uppercase tracking-widest text-gray-700">How To join</p>
+            <p class="text-sm font-bold uppercase tracking-widest text-gray-700">How To join Kci </p>
             <h2 class="mt-6 text-xl font-bold tracking-tight text-gray-900 sm:text-3xl lg:text-4xl">
                 in
-                4 easy steps
+                4 easy Ways
             </h2>
             <p class="mx-auto mt-4 max-w-2xl text-sm font-normal text-gray-700 sm:text-md lg:text-lg lg:leading-8">
-                Create your own Account with us  just 4 easy steps
+                There are the just four way to join our Kci family
             </p>
         </div>
-        <ul class="mx-auto mt-12 grid max-w-md grid-cols-1 gap-10 sm:mt-16 lg:mt-20 lg:max-w-5xl lg:grid-cols-4">
-            <li class="flex-start group relative flex lg:flex-col">
+        <ul class=" pl-5   justify-center w-full mt-12 grid  grid-cols-1 gap-10 sm:mt-16  lg:mt-20  lg:grid-cols-4">
+            <li class="flex-start group relative flex lg:flex-col ">
                 <span
                     class="absolute left-[18px] top-14 h-[calc(100%_-_32px)] w-px bg-gray-300 lg:right-0 lg:left-auto lg:top-[18px] lg:h-px lg:w-[calc(100%_-_72px)]"
                     aria-hidden="true"></span>
@@ -31,9 +31,14 @@ function Roadmap() {
                 <div class="ml-6 lg:ml-0 lg:mt-10">
                     <h3
                         class="text-xl font-bold text-gray-900 before:mb-2 before:block before:font-mono before:text-sm before:text-gray-500">
-                        Add your Account
+                       Direactly come to insitude
                     </h3>
-                    <h4 class="mt-2  text-gray-700 text-sm sm:text-[1rem]"> Store databases or duplicate ours.</h4>
+                    <h4 class="mt-2  text-gray-700 text-sm sm:text-[1rem] flex flex-col gap-2"> 
+                    <span className=' font-semibold'>Location:</span> <span>Roshan nager, Agwanpur, faridabad (HR)</span>
+                    <span>Vinay nager , Agwanpur, faridabad (HR)</span>
+                    <span>91 sector , smilpur, faridabad (HR) </span>
+                    
+                    </h4>
                 </div>
             </li>
             <li class="flex-start group relative flex lg:flex-col">
@@ -42,19 +47,24 @@ function Roadmap() {
                     aria-hidden="true"></span>
                 <div
                     class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-gray-300 bg-gray-50 transition-all duration-200 group-hover:border-gray-900 group-hover:bg-gray-900">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"
-                        class="h-5 w-5 text-gray-600 group-hover:text-white">
-                        <path
-                            d="M2 3L2 21M22 3V21M11.8 20H12.2C13.8802 20 14.7202 20 15.362 19.673C15.9265 19.3854 16.3854 18.9265 16.673 18.362C17 17.7202 17 16.8802 17 15.2V8.8C17 7.11984 17 6.27976 16.673 5.63803C16.3854 5.07354 15.9265 4.6146 15.362 4.32698C14.7202 4 13.8802 4 12.2 4H11.8C10.1198 4 9.27976 4 8.63803 4.32698C8.07354 4.6146 7.6146 5.07354 7.32698 5.63803C7 6.27976 7 7.11984 7 8.8V15.2C7 16.8802 7 17.7202 7.32698 18.362C7.6146 18.9265 8.07354 19.3854 8.63803 19.673C9.27976 20 10.1198 20 11.8 20Z"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
+           
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className=" text-gray-600 group-hover:text-white p-2"   >
+  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+</svg>
+
+
+
                 </div>
                 <div class="ml-6 lg:ml-0 lg:mt-10">
                     <h3
                         class="text-xl font-bold text-gray-900 before:mb-2 before:block before:font-mono before:text-sm before:text-gray-500">
-                        Call us
+                        Call & Whatsupp us
                     </h3>
-                    <h4 class="mt-2 text-base text-gray-700">call us our number</h4>
+                    <h4 class="mt-2 text-base text-gray-700 flex flex-col">call  our number : <span className=' font-semibold'>+91 999 999 999</span></h4>
+                    <h4 class="mt-2 text-base text-gray-700 flex flex-col">Whatsupp our number : <span className=' font-semibold'>+91 999 999 000</span></h4>
+                
                 </div>
             </li>
             <li class="flex-start group relative flex lg:flex-col">
@@ -73,29 +83,40 @@ function Roadmap() {
                 <div class="ml-6 lg:ml-0 lg:mt-10">
                     <h3
                         class="text-xl font-bold text-gray-900 before:mb-2 before:block before:font-mono before:text-sm before:text-gray-500">
-                        Choose Your course
+                        Choose course & fill Enquiry form 
                     </h3>
                     <h4 class="mt-2 text-base text-gray-700">Choose a Best course for you</h4>
+                    <h4 class="mt-2 text-base text-gray-700">And Fill the Enquiry form</h4>
+                    
                 </div>
             </li>
             <li class="flex-start group relative flex lg:flex-col">
                 <div
                     class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-gray-300 bg-gray-50 transition-all duration-200 group-hover:border-gray-900 group-hover:bg-gray-900">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"
-                        class="h-5 w-5 text-gray-600 group-hover:text-white">
-                        <path
-                            d="M5.50049 10.5L2.00049 7.9999L3.07849 6.92193C3.964 6.03644 4.40676 5.5937 4.9307 5.31387C5.39454 5.06614 5.90267 4.91229 6.42603 4.86114C7.01719 4.80336 7.63117 4.92617 8.85913 5.17177L10.5 5.49997M18.4999 13.5L18.8284 15.1408C19.0742 16.3689 19.1971 16.983 19.1394 17.5743C19.0883 18.0977 18.9344 18.6059 18.6867 19.0699C18.4068 19.5939 17.964 20.0367 17.0783 20.9224L16.0007 22L13.5007 18.5M7 16.9998L8.99985 15M17.0024 8.99951C17.0024 10.1041 16.107 10.9995 15.0024 10.9995C13.8979 10.9995 13.0024 10.1041 13.0024 8.99951C13.0024 7.89494 13.8979 6.99951 15.0024 6.99951C16.107 6.99951 17.0024 7.89494 17.0024 8.99951ZM17.1991 2H16.6503C15.6718 2 15.1826 2 14.7223 2.11053C14.3141 2.20853 13.9239 2.37016 13.566 2.5895C13.1623 2.83689 12.8164 3.18282 12.1246 3.87469L6.99969 9C5.90927 10.0905 5.36406 10.6358 5.07261 11.2239C4.5181 12.343 4.51812 13.6569 5.07268 14.776C5.36415 15.3642 5.90938 15.9094 6.99984 16.9998V16.9998C8.09038 18.0904 8.63565 18.6357 9.22386 18.9271C10.343 19.4817 11.6569 19.4817 12.7761 18.9271C13.3643 18.6356 13.9095 18.0903 15 16.9997L20.1248 11.8745C20.8165 11.1827 21.1624 10.8368 21.4098 10.4331C21.6291 10.0753 21.7907 9.6851 21.8886 9.27697C21.9991 8.81664 21.9991 8.32749 21.9991 7.34918V6.8C21.9991 5.11984 21.9991 4.27976 21.6722 3.63803C21.3845 3.07354 20.9256 2.6146 20.3611 2.32698C19.7194 2 18.8793 2 17.1991 2Z"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg>
+            
+
+
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"  class="h-5 w-5 text-gray-600 group-hover:text-white">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008Zm0 2.25h.008v.008H8.25V13.5Zm0 2.25h.008v.008H8.25v-.008Zm0 2.25h.008v.008H8.25V18Zm2.498-6.75h.007v.008h-.007v-.008Zm0 2.25h.007v.008h-.007V13.5Zm0 2.25h.007v.008h-.007v-.008Zm0 2.25h.007v.008h-.007V18Zm2.504-6.75h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V13.5Zm0 2.25h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V18Zm2.498-6.75h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V13.5ZM8.25 6h7.5v2.25h-7.5V6ZM12 2.25c-1.892 0-3.758.11-5.593.322C5.307 2.7 4.5 3.65 4.5 4.757V19.5a2.25 2.25 0 0 0 2.25 2.25h10.5a2.25 2.25 0 0 0 2.25-2.25V4.757c0-1.108-.806-2.057-1.907-2.185A48.507 48.507 0 0 0 12 2.25Z" />
+</svg>
+
+
+
+
+
                 </div>
                 <div class="ml-6 lg:ml-0 lg:mt-10">
                     <h3
                         class="text-xl font-bold text-gray-900 before:mb-2 before:block before:font-mono before:text-sm before:text-gray-500">
-                        Pay and resgiter
+                        Contact Form
                     </h3>
-                    <h4 class="mt-2 text-base text-gray-700">this pay and resigistor.</h4>
+                    <h4 class="mt-2 text-base text-gray-700">You can fill the form of contact us  to contact us</h4>
                 </div>
             </li>
+            
         </ul>
     </div>
 </section>

@@ -14,7 +14,7 @@ const Kcigrowth = () => {
           {
             setStudents((prevStudents) => prevStudents + 1);
           }
-         if ( course < 2000 )
+         if ( course < 5000 )
          {
 
          
@@ -36,30 +36,48 @@ const Kcigrowth = () => {
 
   return (
     <div className=' bg-gray-50'>
-  <h3 className=' text-lg sm:text-2xl text-center pt-5 text-blue-700'>Kci Growth sector</h3>
-    <div class="antialiased h-[50vh] flex justify-evenly  items-center text-center text-gray-800 flex-wrap">
+  <h3 className=' text-lg sm:text-2xl text-center pt-5 text-blue-700'>Kci Growth Scale</h3>
+    <div class="antialiased h-[40vh] flex justify-evenly  items-center text-center text-gray-800 flex-wrap">
+    
+    <div className=' flex flex-col gap-5'>
+
     
     <div className=" w-20 h-20 lg:w-36 lg:h-36 rounded-full flex items-center justify-center flex-col" style={{ boxShadow: 'rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset' }}>
       <span class="text-lg sm:text-2xl lg:text-3xl font-bold text-blue-900" 
        >
         {Students}+
       </span>
-      <p className=' text-sm lg:text-xl'>Students</p>
     </div>
-    <div className="w-20 h-20 lg:w-36 lg:h-36 rounded-full flex items-center justify-center flex-col" style={{ boxShadow: 'rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset' }}>
+
+      <p className=' text-sm lg:text-xl'> On Going Students</p>
+</div>
+
+
+
+
+<div className='flex flex-col gap-5'>
+<div className="w-20 h-20 lg:w-36 lg:h-36 rounded-full flex items-center justify-center flex-col" style={{ boxShadow: 'rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset' }}>
       <span class="text-lg sm:text-2xl lg:text-3xl font-bold text-blue-900"  
        >
         {course}+
       </span>
-      <p className=' text-sm lg:text-xl'>course</p>
     </div>
-    <div className="w-20 h-20 lg:w-36 lg:h-36 rounded-full flex items-center justify-center flex-col" style={{ boxShadow: 'rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset' }}>
+      <p className=' text-sm lg:text-xl'>Total Studnet Teach</p>
+</div>
+
+<div className='flex flex-col gap-5'>
+<div className="w-20 h-20 lg:w-36 lg:h-36 rounded-full flex items-center justify-center flex-col" style={{ boxShadow: 'rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset' }}>
       <span class="text-lg sm:text-2xl lg:text-3xl font-bold text-blue-900" 
        >
         {Placements}+
       </span>
-      <p className=' text-[0.6rem] lg:text-xl'>Placements</p>
     </div>
+      <p className=' text-[0.6rem] lg:text-xl'>Placements students</p>
+</div>
+
+
+   
+  
   </div>
     </div>
     

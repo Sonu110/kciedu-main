@@ -58,7 +58,7 @@ const StudentForm = () => {
   
       // Append the file
       formDataObj.append('Files', formData.Files);
-      console.log("the value is ", formDataObj);
+
   
       const response = await fetch(`${API_ENDPOINT}/studentadmission`, {
         method: 'POST',

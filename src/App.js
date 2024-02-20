@@ -34,6 +34,7 @@ import Paymentupdatefrom from './Dashbord/Pages/Paymentdatas/Paymentupdatefrom';
 import Placement from './Dashbord/Pages/Placemant/Placement';
 import Career from './Pages/Career';
 import Placementlist from './Dashbord/Pages/Placemant/Placementlist';
+import Addnewteacher from './Dashbord/Pages/Teacher/Addnewteacher';
 
 function App() {
 
@@ -84,7 +85,7 @@ function App() {
     <Route path='feereceipt' element={<Paymentlist></Paymentlist>}></Route>
     
     <Route path='staff' element={<Teacherlist />} />
-    <Route path='newteacher' element={<Newteacher />} />
+    <Route path='newteacher' element={<Addnewteacher />} />
     <Route path='course' element={<Courselist />} />
     <Route path='newcourse' element={<Addcourse />} />
     <Route path='placement' element={<Placement />} />

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import course from "../../../Data/Course"
+// import course from "../../../Data/Course"
 
 export default function Teacherlist() {
 
@@ -11,7 +11,7 @@ export default function Teacherlist() {
             <h2 class="text-gray-600 font-semibold ">All Course</h2>
           
         </div>
-        <Link to={'/dashbord/newcourse'}>
+        <Link to={'/dashbord/newteacher'}>
             <button class="bg-white hover:bg-gray-100  text-gray-800 font-semibold py-2 px-4 border border-gray-400  rounded shadow">Add new Items </button>
             </Link>
       

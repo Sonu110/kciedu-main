@@ -23,6 +23,7 @@ const Newteacher = () => {
               name="name"
               className="w-full border border-gray-300 p-2 rounded-lg"
               placeholder="Enter your name"
+              
             />
           </div>
           <div>

@@ -34,8 +34,8 @@ function Conatctmenu() {
   return (
     <>
         <div id="login-popup" tabindex="-1"
-    class={ ` bg-black/50 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 h-full items-center justify-center flex ${opennav || islogin ? "hidden" :""} `}
-    
+    class={ ` bg-black/50 overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 h-full items-center justify-center flex ${opennav || islogin ? "hidden" :""} ` }
+    style={{zIndex:"999"}}
 
     >
     <div class="relative p-4 w-full max-h-[500px]  md:max-w-[80%]  sm:max-w-[90%] h-full md:h-auto  grid grid-cols-1 lg:grid-cols-2  bg-gray-50 rounded-lg shadow-inner">
