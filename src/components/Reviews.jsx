@@ -14,7 +14,7 @@ function Reviews({img, name, feild, des}) {
 
 
 
-<div  className=' flex flex-wrap justify-evenly gap-4'>
+<div  className=' flex flex-wrap justify-evenly gap-4 '>
  
 
 

@@ -4,6 +4,10 @@ import { Link } from "react-router-dom"
 export default function Teacherlist() {
 
 
+
+
+
+
   return (
     <div class="bg-white p-8 rounded-md w-full">
     <div class=" flex items-center justify-between pb-6">

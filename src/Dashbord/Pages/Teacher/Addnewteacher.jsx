@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import API_ENDPOINT from '../../../config';
+import { Link } from "react-router-dom";
 function Addnewteacher() {
 
     const [Formdata ,setfromdata]= useState(
@@ -8,11 +9,11 @@ function Addnewteacher() {
             name :'',
             knowledge:'',
             phone:'',
-            gender :'',
+            gender: 'male',
             dob:'',
             salary:'',
             address:'',
-            branch:'',
+            branch: 'roshan',
             Files:null,
 
 
@@ -60,6 +61,7 @@ async function handleSubmit(e) {
         }
         finally
         {
+          console.log("filny end");
           setLoading(false)
         }
 
@@ -148,6 +150,7 @@ async function handleSubmit(e) {
                   name="gender"
                   className="w-full border border-gray-300 p-2 rounded-lg"
                   onChange={handlehange}
+                value={Formdata.gender}
              
                 >
                   <option value="male">Male</option>
@@ -185,6 +188,7 @@ async function handleSubmit(e) {
                 name="salary"
                 className="w-full border border-gray-300 p-2 rounded-lg"
                 placeholder="Enter salary  "
+                onChange={handlehange}
               />
             </div>
 
@@ -201,6 +205,7 @@ async function handleSubmit(e) {
                 rows="5"
                 className="w-full border border-gray-300 p-2 rounded-lg"
                 placeholder="Enter teacher's address"
+                onChange={handlehange}
               ></textarea>
             </div>
 
@@ -216,6 +221,7 @@ async function handleSubmit(e) {
                 name="branch"
                 className="w-full border border-gray-300 p-2 rounded-lg"
                 onChange={handlehange}
+                value={Formdata.branch}
               
               >
                 <option value="roshan">Roshan</option>
@@ -244,15 +250,18 @@ async function handleSubmit(e) {
               <button
                 type="submit"
                 className="w-1/2 rounded-3xl bg-black px-6 py-2 text-xl font-medium uppercase text-white"
+
+              
               >
-                Submit
-              </button>
-              <button
-                type="reset"
-                className="w-1/2 rounded-3xl bg-red-500 px-6 py-2 text-xl font-medium uppercase text-white"
+               {Loading ? "Submit.......": "Submit"}               </button>
+              <Link to={'/dashbord/staff'}   className="w-1/2 rounded-3xl bg-red-500 px-6 py-2 text-xl font-medium uppercase text-white text-center"
               >
+
+             
+               
+              
                 Reset
-              </button>
+              </Link>
             </div>
           </form>
         </div>
