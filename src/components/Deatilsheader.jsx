@@ -18,7 +18,7 @@ function Deatilsheader() {
       {
         name:"Get Ready for The Next Career",
         icons:  < FaBookAtlas/>
-      } ,
+      }  , 
       {
         name:"Master at Different Areas",
         icons:   < CiCloudSun/> 
