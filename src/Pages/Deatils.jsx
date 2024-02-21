@@ -21,9 +21,9 @@ const data = info.find((item) => item?.Name === name || item?.name === name);
   }, []);
   return (
    <>
-   <div className="   min-h-screen  grid grid-cols-1  sm:grid-cols-2  p-16 sm:pt-32 bg-blue-50  place-content-center">
+   <div className="   min-h-screen  grid grid-cols-1  sm:grid-cols-2  p-0 pb-10 sm:p-16 sm:pt-32 bg-blue-50  place-content-center">
 
-   <div  className="detailcard flex items-start flex-col    ">
+   <div  className="detailcard flex items-start flex-col  pt-28 sm:pt-0 p-5  ">
         
 
 
@@ -124,7 +124,7 @@ const data = info.find((item) => item?.Name === name || item?.name === name);
     <div class="md:w-1/3"></div>
     <div class="md:w-2/3">
       <button class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
-       Get site
+       Submit
       </button>
     </div>
   </div>

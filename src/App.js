@@ -39,6 +39,7 @@ import TeacherRecord from './Dashbord/Pages/Teacher/Teacherdetails';
 import Addadminform from './Dashbord/components/Addadminform';
 import HeadProtexted from './Pages/Protextedrouter/Headauth';
 import Loginadmindata from './Dashbord/Pages/Adminilogindata/Loginadmin';
+import Applyform from './Pages/Applyform';
 
 function App() {
 
@@ -56,6 +57,8 @@ function App() {
       <Route path='course' element={<Course></Course>}></Route>
       <Route path='contact' element={<Contact></Contact>}></Route>
       <Route path='career' element={<Career></Career>}></Route>
+      <Route path='applyform' element={<Applyform></Applyform>}></Route>
+      
       <Route path='login' element={<Login></Login>}></Route>
       <Route path='signup' element={<Signup></Signup>}></Route>
       

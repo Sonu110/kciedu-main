@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import API_ENDPOINT from "../config"
 import Tableloading from '../Loader/Tableloading';
+import { Link } from 'react-router-dom';
 
 function Career() {
 
@@ -83,7 +84,7 @@ function Career() {
       <div class="mt-5 flex flex-col space-y-3 text-sm font-medium text-gray-500 sm:flex-row sm:items-center sm:space-y-0 sm:space-x-2">
         <div class="">Experience:<span class="ml-2 mr-3 rounded-full bg-green-100 px-2 py-0.5 text-green-900"> {item.experience} year</span></div>
         <div class="">Salary:<span class="ml-2 mr-3 rounded-full bg-blue-100 px-2 py-0.5 text-blue-900">₹{item.salary}</span></div>
-        <button type="button" class="py-2.5 min-w-[200px] mt-4 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Apply</button>
+        <Link to={'/applyform'} class="py-2.5 min-w-[200px] mt-4 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Apply</Link>
       </div>
     
     </div>

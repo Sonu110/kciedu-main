@@ -18,7 +18,7 @@ function Reviews({img, name, feild, des}) {
  
 
 
-  <div class=" md:mb-0 w-[400px] shadow-md  ">
+<div className={`md:mb-0 w-[400px] shadow-md ${display ? '' : 'h-[400px]'}`}>
   <div class=" flex justify-center">
     <img src={img}
       class="w-32 rounded-full shadow-lg dark:shadow-black/20" />
@@ -28,7 +28,7 @@ function Reviews({img, name, feild, des}) {
     {feild}s
   </h6>
   <p class="mb-4 break-words text-wrap p-5  text-sm sm:text-[1rem]">
-  {display ? des : des.length > 100 ? des.slice(0, 100) + '...' : des}
+  {display ? des : des.length > 100 ? des.slice(0, 90) + '...' : des}
    {/* {display ? des : des.length > 100 ? des.slice(0, 100) + "..." : des } */}
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960" class="inline-block w-6">
       <path fill="currentColor"

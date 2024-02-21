@@ -23,9 +23,10 @@ const {setloginuserdata} = useContext(userconetxt)
   
           if (response.ok) {
             const adminUserData = await response.json();
+          
             setstudentloging(adminUserData.data)
             setloginuserdata(adminUserData.data.length)
-            console.log("Admin User Data:", adminUserData.data);
+           
           } else {
             console.error("Failed to fetch admin user data:", response.status, response.statusText);
           }
@@ -39,6 +40,56 @@ const {setloginuserdata} = useContext(userconetxt)
     checkToken();
   }, []);  // Dependency array is empty since you only want to run this once on component mount
   
+
+  const update = async (id) => {
+    try {
+        const response = await fetch(`${API_ENDPOINT}/adminupdate/${id}`, {
+            method: "PUT",
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({}),  // Add the data you want to update
+        });
+
+        if (response.ok) {
+          const data = await response.json()
+            console.log("Data updated", data);
+            alert("Data updated");
+        } else {
+            console.error("Failed to update admin user data:", response.status, response.statusText);
+        }
+    } catch (error) {
+        console.error("Error updating admin user data:", error);
+    }
+};
+
+const Delect = async (id) => {
+  try {
+      const response = await fetch(`${API_ENDPOINT}/adminupdatedelect/${id}`, {
+        method: 'DELETE',
+          headers: {
+              Authorization: `Bearer ${localStorage.getItem('token')}`,
+              'Content-Type': 'application/json',
+          },
+          
+      });
+
+      if (response.ok) {
+        const data = await response.json()
+        setstudentloging(prevState => prevState.filter(item => item._id !== id));
+          alert("Data delect");
+        
+      } else {
+          console.error("Failed to update admin user data:", response.status, response.statusText);
+      }
+  } catch (error) {
+      console.error("Error updating admin user data:", error);
+  }
+};
+
+
+
 if(studentloging.length == 0 || setloginuserdata == null)
 {
    return <Tableloading></Tableloading>
@@ -67,6 +118,12 @@ if(studentloging.length == 0 || setloginuserdata == null)
                             <th class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light">Year</th>
                             
                             <th class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light text-right">Time</th>
+
+                            
+                            <th class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light text-right">Stop</th>
+
+                            
+                            <th class="py-2 px-4 bg-grey-lightest font-bold uppercase text-sm text-grey-light border-b border-grey-light text-right">Delect</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -74,12 +131,28 @@ if(studentloging.length == 0 || setloginuserdata == null)
                             studentloging.map((i)=>
                             
                             
-                            i?.isAdmin && (
+                            (i?.isAdmin && i?.rolls !='head' ) && (
                               <tr class="hover:bg-grey-lighter">
                                 <td class="py-2 px-4 border-b border-grey-light">{i?.Name}</td>
                                 <td class="py-2 px-4 border-b border-grey-light text-center">{i?.email}</td>
                                 <td class="py-2 px-4 border-b border-grey-light text-center">{new Date(i?.updatedAt).getFullYear()}</td>
                                 <td class="py-2 px-4 border-b border-grey-light text-right">{new Date(i?.updatedAt).toLocaleTimeString()}</td>
+                                <td class="py-2 px-4 border-b border-grey-light text-right">
+                                
+                                
+<label class="inline-flex items-center cursor-pointer">
+  <input type="checkbox" value="" class="sr-only peer" onChange={()=>update(i._id)}
+
+defaultChecked={i?.isAdmin}
+
+  />
+  <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
+  </div>
+  <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">click me</span>
+</label>
+
+                                </td>
+                                <td class="py-2 px-4 border-b border-grey-light text-center bg-red-700 text-white cursor-pointer" onClick={()=> Delect(i?._id)}>Delect</td>
                               </tr>
                          
                             )
