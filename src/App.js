@@ -23,7 +23,7 @@ import { userconetxt } from './context/Context';
 import Addcourse from './Dashbord/Pages/Course/Addcourse';
 import StudentForm from './Dashbord/Pages/Student/StudentForm';
 import Teacherlist from './Dashbord/Pages/Teacher/Teacherlist';
-import Newteacher from './Dashbord/Pages/Teacher/Newteacher';
+import Newteacher from './Dashbord/Pages/Teacher/Teacherdetails';
 import UpdateStudentForm from './Dashbord/Pages/Student/Updatefrom';
 import StudentDetails from './Dashbord/Pages/Student/Studentdetails';
 import Studentlogin from './Pages/Studentlogin';
@@ -35,6 +35,7 @@ import Placement from './Dashbord/Pages/Placemant/Placement';
 import Career from './Pages/Career';
 import Placementlist from './Dashbord/Pages/Placemant/Placementlist';
 import Addnewteacher from './Dashbord/Pages/Teacher/Addnewteacher';
+import TeacherRecord from './Dashbord/Pages/Teacher/Teacherdetails';
 
 function App() {
 
@@ -86,6 +87,8 @@ function App() {
     
     <Route path='staff' element={<Teacherlist />} />
     <Route path='newteacher' element={<Addnewteacher />} />
+    <Route path='teacherdetails/:id' element={<TeacherRecord />} />
+    
     <Route path='course' element={<Courselist />} />
     <Route path='newcourse' element={<Addcourse />} />
     <Route path='placement' element={<Placement />} />

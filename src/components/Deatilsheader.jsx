@@ -1,7 +1,6 @@
 import React from 'react'
 import { GiBrain } from "react-icons/gi";
 import { FaBookAtlas } from "react-icons/fa6";
-import { FaGraduationCap } from "react-icons/fa";
 import { CiCloudSun } from "react-icons/ci";
 function Deatilsheader() {
   return (

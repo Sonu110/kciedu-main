@@ -1,10 +1,87 @@
+import { useContext, useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 // import course from "../../../Data/Course"
-
+import API_ENDPOINT from '../../../config';
+import Tableloading from "../../../Loader/Tableloading";
+import { userconetxt } from "../../../context/Context";
 export default function Teacherlist() {
+const {setteachers} = useContext(userconetxt)
+const [data , setdata ] = useState({})
+const [Loading , setLoading] = useState(true)
+
+useEffect(()=>{
+
+const teacherdata =async ()=>{
 
 
 
+    try {
+    
+        const response = await fetch(`${API_ENDPOINT}/staffdata`, {
+        
+            headers: {
+              'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            },
+          });
+   
+        if(response.ok)
+        {
+            const Teacher = await response.json();
+            setdata(Teacher.data)
+            setteachers(Teacher.data.length)
+            console.log("then vhsagdhjsadaskd ad",Teacher.data);
+
+        }
+
+    } catch (error) 
+    {
+    console.log("erorr");
+    }
+    finally
+    {
+        setLoading(false)
+
+    }
+
+}
+
+teacherdata()
+
+},[])
+
+const handleDelete = async (id, name) => {
+    const conform = window.confirm("are you want to delete the value of", name);
+
+    if (conform) {
+      const storedToken = localStorage.getItem('token');
+      if (storedToken) {
+        try {
+          const response = await fetch(`${API_ENDPOINT}/deleteteacher/${id}`, {
+            method: 'DELETE',
+            headers: {
+              Authorization: `Bearer ${storedToken}`,
+            },
+          });
+
+          if (response.ok) {
+            // Remove the deleted student from the state
+            setdata((prevData) => prevData.filter((student) => student._id !== id));
+          } else {
+            console.log("Error: Something went wrong");
+          }
+        } catch (error) {
+          console.error("Error deleting student:", error);
+        }
+      }
+    }
+  };
+
+
+
+if(Loading)
+{
+  return <Tableloading></Tableloading>
+}
 
 
 
@@ -12,7 +89,7 @@ export default function Teacherlist() {
     <div class="bg-white p-8 rounded-md w-full">
     <div class=" flex items-center justify-between pb-6">
         <div>
-            <h2 class="text-gray-600 font-semibold ">All Course</h2>
+            <h2 class="text-gray-600 font-semibold ">All Staff Recourds</h2>
           
         </div>
         <Link to={'/dashbord/newteacher'}>
@@ -21,75 +98,57 @@ export default function Teacherlist() {
       
         </div>
         <div>
-            <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
-                <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
-                    <table class="min-w-full leading-normal">
-                        <thead>
-                            <tr>
-                                <th
-                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                    S.No
-                                </th>
-                                <th
-                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                    Img
-                                </th>
-                                <th
-                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                Course Name
-                                </th>
-                                <th
-                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                  	Duration
-                                </th>
-                                <th
-                                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                                    	Fees
-                                </th>
-                               
-                            </tr>
-                        </thead>
-                        <tbody>
-                        {
-                            [1,2,3,4].map((item ,index)=>
-                                
-                            <tr key={index}>
-                                  <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">   {item.id}</p>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <div class="flex items-center">
-                                        <div class="flex-shrink-0 w-10 h-10">
-                                            <img class="w-full h-full rounded-full"
-                                                src={item.src}
-                                                alt="no image" />
-                                        </div>
-                                         
-                                        </div>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">   {item.name}</p>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">
-                                      {item.duration}
-                                    </p>
-                                </td>
-                                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                                    <p class="text-gray-900 whitespace-no-wrap">
-                                    ₹ {item.amount}
-                                    </p>
-                                </td>
-                               
-                            </tr>
-                                )
-                            }
+        <div className="  w-full  ">
+      <table className=" w-full">
+        <thead>
+          <tr>
+          <th className="px-4 py-2">Sno</th>
+            <th className="px-4 py-2">Image</th>
+            <th className="px-4 py-2">Name</th>
+            <th className="px-4 py-2">Knowledge</th>
+            <th className="px-4 py-2">Mobile</th>
+            <th className="px-4 py-2">Address</th>
+            <th className="px-4 py-2">Join Date</th>
+            <th className="px-4 py-2">Salary</th>
+            <th className="px-4 py-2">See</th>
+            <th className="px-4 py-2">Delect</th>
+         
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((teacher, index) => (
+            <tr key={index}>
+              <td className="border px-4 py-2">{index+1}</td>
+              <td className="border px-4 py-2">
+                <img src={teacher.Image} alt={teacher.Name} className="w-16 h-16 object-cover rounded-full" />
+              </td>
+              <td className="border px-4 py-2">{teacher.Name}</td>
+              <td className="border px-4 py-2">{teacher.knowledge}</td>
+              <td className="border px-4 py-2">{teacher.Mobile}</td>
+              <td className="border px-4 py-2">{teacher.Address}</td>
+              <td className="border px-4 py-2">{teacher.Joindate}</td>
+              <td className="border px-4 py-2">₹ {teacher.Salary}</td>
              
-                        </tbody>
-                    </table>
-             
-                </div>
-            </div>
+
+              <td className="border px-4 py-2  bg-blue-300 text-white">
+              <Link to={`/dashbord/teacherdetails/${teacher._id}`}>
+              
+              See Profile
+              </Link>
+              </td>
+              <td className="border px-4 py-2 bg-red-800 text-white" onClick={()=> handleDelete(teacher._id)}>
+              
+              
+              Detect
+              
+              </td>
+              
+              
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
         </div>
     </div>
   )

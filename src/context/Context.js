@@ -15,7 +15,7 @@ function Providerfunction({ children }) {
   const [iskcistuentdata , setiskcistuentdata] = useState(false)
   const [kcistuentdata, setkcistuentdata]=useState({})
   const [studentdata, setstudentdata]= useState()
-
+const [Totalteacher , setteachers] = useState()
 
 
 
@@ -93,7 +93,7 @@ function Providerfunction({ children }) {
 
 
   return (
-    <userconetxt.Provider value={{ user, setuser, islogin, setlogin, userdata, username , setloginuserdata ,loginuserdata ,coursedata ,setupdate , setstudentdata , studentdata , setiskcistuentdata , iskcistuentdata ,kcistuentdata}}>
+    <userconetxt.Provider value={{ user, setuser, islogin, setlogin, userdata, username , setloginuserdata ,loginuserdata ,coursedata ,setupdate , setstudentdata , studentdata , setiskcistuentdata , iskcistuentdata ,kcistuentdata ,setteachers , Totalteacher}}>
       {!loading && children}
     </userconetxt.Provider>
   );
