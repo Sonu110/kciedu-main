@@ -6,6 +6,7 @@ import { userconetxt } from '../../../context/Context';
 
 function Studentlist() {
   const { setstudentdata } = useContext(userconetxt);
+  const [loading , setloading] = useState(true)
   const [newstudentdata, setnewstudnetdata] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(5);
@@ -39,6 +40,10 @@ function Studentlist() {
           }
         } catch (error) {
           console.error("Error fetching student data:", error);
+        }
+        finally
+        {
+          setloading(false)
         }
       }
     };
@@ -74,7 +79,7 @@ function Studentlist() {
     }
   };
 
-  if (newstudentdata.length === 0 || newstudentdata === null) {
+  if (loading) {
     return <Tableloading></Tableloading>;
   }
 

@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
+import { userconetxt } from "../../context/Context";
+
 function DashbordHeader() {
+
+  const { username } = useContext(userconetxt)
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -11,7 +15,6 @@ function DashbordHeader() {
 
   const [stuentsubmenu, setstuentsubmenu] = useState(false);
   const [examsubmenu, setexamsubmenu] = useState(false);
-
   const location = useLocation();
   const currentPath = location.pathname;
   const lastPartOfUrl = currentPath.substring(currentPath.lastIndexOf("/") + 1);
@@ -73,6 +76,14 @@ function DashbordHeader() {
                 </span>
               </a>
             </div>
+
+          {
+            username ==='head' ?
+<Link to={'/dashbord/newbrach'}>
+        <button className=" p-2 px-10 bg-black text-white rounded-md"> Add new Branch</button>
+            </Link>
+          :null
+          }
           </div>
         </div>
       </nav>
@@ -99,6 +110,25 @@ function DashbordHeader() {
                   </li>
 
                   <li>
+
+
+                  {
+            username ==='head' ?
+                    <Link
+                      to={"allsubadmin"}
+                      class="text-base text-gray-900 font-semibold cursor-pointer  rounded-lg flex items-center p-2 hover:bg-gray-100 group"
+                    >
+                      <span class="ml-3">{"Allsubadmin"}</span>
+                    </Link>
+
+          :null
+          }
+
+                  </li>
+
+
+
+                  <li>
                     <span class="text-base text-gray-900 font-semibold cursor-pointer  rounded-lg flex items-center p-2 hover:bg-gray-100 group relative">
                       <span
                         class="ml-3 flex justify-between items-center w-full"
@@ -118,12 +148,17 @@ function DashbordHeader() {
                       } `}
                     >
                       <li>
-                        <Link
+                      {
+            username ==='head' ?
+         null
+          :  <Link
                           to={"newstudent"}
                           class="text-base text-gray-900 font-semibold cursor-pointer  rounded-lg flex items-center p-2 hover:bg-gray-100 group"
                         >
                           <span class="ml-3">{"Admission"}</span>
                         </Link>
+          }
+                      
                       </li>
                       <li>
                         <Link
@@ -134,12 +169,21 @@ function DashbordHeader() {
                         </Link>
                       </li>
                       <li>
-                        <Link
+
+                      {
+            username ==='head' ?
+         null
+          :  
+          <Link
                           to={"payment"}
                           class="text-base text-gray-900 font-semibold cursor-pointer  rounded-lg flex items-center p-2 hover:bg-gray-100 group"
                         >
                           <span class="ml-3">{"Payment"}</span>
                         </Link>
+          }
+
+
+                       
                       </li>
 
                       <li>

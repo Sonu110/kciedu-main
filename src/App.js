@@ -36,6 +36,9 @@ import Career from './Pages/Career';
 import Placementlist from './Dashbord/Pages/Placemant/Placementlist';
 import Addnewteacher from './Dashbord/Pages/Teacher/Addnewteacher';
 import TeacherRecord from './Dashbord/Pages/Teacher/Teacherdetails';
+import Addadminform from './Dashbord/components/Addadminform';
+import HeadProtexted from './Pages/Protextedrouter/Headauth';
+import Loginadmindata from './Dashbord/Pages/Adminilogindata/Loginadmin';
 
 function App() {
 
@@ -93,7 +96,11 @@ function App() {
     <Route path='newcourse' element={<Addcourse />} />
     <Route path='placement' element={<Placement />} />
     <Route path='career' element={<Placementlist />} />
-    
+
+    <Route path='newbrach' element={<HeadProtexted user={user} name ={username}></HeadProtexted>}>
+      <Route path='' element={<Addadminform></Addadminform>}></Route>
+    </Route>
+    <Route path='allsubadmin' element={<Loginadmindata />} />
 
 
     <Route path='logout' element={<Massage />} />
