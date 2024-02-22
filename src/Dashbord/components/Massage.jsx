@@ -5,7 +5,7 @@ import API_ENDPOINT from '../../config';
 
 function Massage() {
 
-    const {setuser } = useContext(userconetxt);
+    const {setuser ,setuserdata } = useContext(userconetxt);
    
     
       const logoutAdmin = async () => {
@@ -22,7 +22,7 @@ function Massage() {
             if (response.ok) {
               setuser(null);
               localStorage.removeItem('token');
-  
+              setuserdata({});
               
             } else {
               console.error('Failed to logout admin:', response.status, response.statusText);

@@ -10,6 +10,7 @@ function Loginadmindata() {
 const [studentloging , setstudentloging]= useState([])
 const {setloginuserdata} = useContext(userconetxt)
 
+
   useEffect(() => {
     const checkToken = async () => {
       const storedToken = localStorage.getItem('token');
@@ -22,8 +23,8 @@ const {setloginuserdata} = useContext(userconetxt)
           });
   
           if (response.ok) {
+           
             const adminUserData = await response.json();
-          
             setstudentloging(adminUserData.data)
             setloginuserdata(adminUserData.data.length)
            
@@ -41,7 +42,7 @@ const {setloginuserdata} = useContext(userconetxt)
   }, []);  // Dependency array is empty since you only want to run this once on component mount
   
 
-  const update = async (id) => {
+  const update = async (id ,newStatus) => {
     try {
         const response = await fetch(`${API_ENDPOINT}/adminupdate/${id}`, {
             method: "PUT",
@@ -49,11 +50,18 @@ const {setloginuserdata} = useContext(userconetxt)
                 Authorization: `Bearer ${localStorage.getItem('token')}`,
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({}),  // Add the data you want to update
+            body: JSON.stringify({
+              isAdmin: newStatus,
+
+            }),  // Add the data you want to update
         });
 
         if (response.ok) {
           const data = await response.json()
+          const updatedData = studentloging.map((item) =>
+          item._id === id ? { ...item, isAdmin: newStatus } : item
+        );
+        setstudentloging(updatedData);
             console.log("Data updated", data);
             alert("Data updated");
         } else {
@@ -131,7 +139,7 @@ if(studentloging.length == 0 || setloginuserdata == null)
                             studentloging.map((i)=>
                             
                             
-                            (i?.isAdmin && i?.rolls !='head' ) && (
+                             i?.rolls ==='admin' && (
                               <tr class="hover:bg-grey-lighter">
                                 <td class="py-2 px-4 border-b border-grey-light">{i?.Name}</td>
                                 <td class="py-2 px-4 border-b border-grey-light text-center">{i?.email}</td>
@@ -140,8 +148,11 @@ if(studentloging.length == 0 || setloginuserdata == null)
                                 <td class="py-2 px-4 border-b border-grey-light text-right">
                                 
                                 
-<label class="inline-flex items-center cursor-pointer">
-  <input type="checkbox" value="" class="sr-only peer" onChange={()=>update(i._id)}
+<label class="inline-flex items-center gap-3 cursor-pointer">
+{i?.isAdmin ? "On" : "Off"}
+
+
+  <input type="checkbox" value="" class="sr-only peer"  onChange={() => update(i._id, !i.isAdmin)}
 
 defaultChecked={i?.isAdmin}
 

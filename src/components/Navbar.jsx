@@ -6,17 +6,15 @@ import {  IoMdSearch} from "react-icons/io";
 import course from '../Data/Course';
 import API_ENDPOINT from '../config';
 function Navbars() {
-
+ 
     const [opennav, setnav]=useState(false)
     const [submenu , setsubmenu] = useState(false)
     const [listdata , setlistdata]= useState('')
-  const {userdata ,coursedata , setuser} = useContext(userconetxt)
-  console.log("the value so", userdata);
+  const {userdata ,coursedata , setuser ,setuserdata } = useContext(userconetxt)
   const data = course.concat(coursedata)
   const navbarlistdata = data.filter((i) => i.name?.toLowerCase().startsWith(listdata.toLowerCase()) || i.Name?.toLowerCase().startsWith(listdata.toLowerCase()) );
   const logoutuser = async () => {
     const storedToken = localStorage.getItem('token');
-    alert("yes")
     if (storedToken) {
       try {
         const response = await fetch(`${API_ENDPOINT}/logout`, {
@@ -25,12 +23,13 @@ function Navbars() {
             Authorization: `Bearer ${storedToken}`,
           },
         });
-
+        console.log(response);
         if (response.ok) {
           setuser(null);
           localStorage.removeItem('token');
-
-          
+          alert("Logout successful");
+          setuserdata({});
+          window.location.href = '/';
         } else {
           console.error('Failed to logout admin:', response.status, response.statusText);
         }
@@ -39,6 +38,7 @@ function Navbars() {
       }
     }
   };
+  
 
   return (
  
