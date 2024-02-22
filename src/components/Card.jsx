@@ -10,7 +10,7 @@ import {
 } from "@material-tailwind/react";
 import { Link } from 'react-router-dom';
  
-function Cards({name, des ,src ,details ,flag=true,pdf}) {
+function Cards({name, des ,src ,details ,flag=true,pdf , address}) {
   return (
    
 
@@ -52,7 +52,8 @@ function Cards({name, des ,src ,details ,flag=true,pdf}) {
             5.0
           </Typography>
         </div>
-        <Typography color="gray" className='  flex-wrap text-start text-sm relative h-16  '>
+      <div className='text-sm text-left mb-2'>{ flag ? address : null}</div>
+        <Typography color="gray" className='  flex-wrap text-start text-sm relative h-16   '>
           
           
         {des ? (des.length > 100 ? des.slice(0, 105) + "..." : des) : details}

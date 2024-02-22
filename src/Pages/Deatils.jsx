@@ -21,7 +21,7 @@ const data = info.find((item) => item?.Name === name || item?.name === name);
   }, []);
   return (
    <>
-   <div className="   min-h-screen  grid grid-cols-1  sm:grid-cols-2  p-0 pb-10 sm:p-16 sm:pt-32 bg-blue-50  place-content-center">
+   <div className="   min-h-screen  grid grid-cols-1  md:grid-cols-2  p-0 pb-10 sm:p-16 sm:pt-32 bg-blue-50  place-content-center">
 
    <div  className="detailcard flex items-start flex-col  pt-28 sm:pt-0 p-5  ">
         
