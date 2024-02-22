@@ -3,12 +3,16 @@ import { Link } from "react-router-dom";
  
 const LINKS = [
   {
-    title: "Product",
-    items: ["Overview", "Features", "Solutions", "Tutorials"],
+    title: "Menu",
+    items: ["Home", "About", "Course", "Career" , 'Contact'],
+   
+    link: ["/", "/about", "/course", "/career", '/contact'],
+   
+    
   },
   {
-    title: "Company",
-    items: ["About us", "Careers", "Press", "News"],
+    title: "Product",
+    items: ["Overview", "Features", "Solutions", "Tutorials"],
   },
 
 ];
@@ -28,8 +32,8 @@ export function Footer() {
         Education
         </Link>
           </Typography>
-          <div className=" flex  justify-end gap-10">
-            {LINKS.map(({ title, items }) => (
+          <div className=" flex  justify-end gap-10 pr-10">
+            {LINKS.map(({ title, items ,link  }) => (
               <ul key={title}>
                 <Typography
                   variant="small"
@@ -38,19 +42,17 @@ export function Footer() {
                 >
                   {title}
                 </Typography>
-                {items.map((link) => (
-                  <li key={link}>
-                    <Typography
-                      as="a"
-                      href="#"
-                      color="gray"
+                {items.map((item, index) => (
+                  <li key={item} className=" mt-2">
+                    <Link
+                     to={link && link[index] ? link[index] : '#'}
                       className="py-1.5 font-normal transition-colors hover:text-blue-gray-900"
                     >
-                      {link}
-                    </Typography>
+                      {item}
+                    </Link>
                   </li>
                 ))}
-              </ul>
+              </ul> 
             ))}
           </div>
         </div>
